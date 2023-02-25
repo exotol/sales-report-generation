@@ -46,3 +46,10 @@ create-secrets:
 server-run:
 	@echo "Запуск сервера"
 	uvicorn python app/main.py
+
+build-container:
+	@echo "Запущена сборка контейнера и последующий подъем"
+	make create-secrets; \
+	make gen-req; \
+	docker build -t sales-report-gen:0.1.0 docker/; \
+	docker-compose -f docker/docker-compose.local.yml up

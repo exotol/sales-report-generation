@@ -1,0 +1,16 @@
+services:
+  server:
+    image: sales-report-gen:latest
+    container_name: sales-report-gen
+    command: [
+      "uvicorn", "app.main:app_factory",
+      "--port", "10000",
+      "--host", "0.0.0.0",
+      "--reload",
+      "--factory",
+      "--log-config", "/main/configs/logger_cfg.yaml",
+      "--use-colors",
+      "--log-level", "info"
+    ]
+    ports:
+      - "10000:10000"
