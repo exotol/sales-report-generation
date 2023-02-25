@@ -33,7 +33,7 @@ gen-req:
 	@echo "Генерация requirements.txt/requirements-dev.txt из poetry"
 	echo "poetry-core>=1.0.0" | tee requirements/requirements.txt requirements/requirements-dev.txt; \
 	poetry export --without-hashes | grep -v "@ file" >> requirements/requirements.txt
-	poetry export -with dev --without-hashes | grep -v "@ file" >> requirements/requirements-dev.txt
+	poetry export --with dev --without-hashes | grep -v "@ file" >> requirements/requirements-dev.txt
 
 denied-internal-env:
 	@echo "Запрет для poetry создавать внутри виртуальное окржуение"
