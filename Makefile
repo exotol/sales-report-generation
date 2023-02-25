@@ -45,4 +45,4 @@ create-secrets:
 
 server-run:
 	@echo "Запуск сервера"
-	uvicorn app.main:app_factory --reload --factory --port 10003
+	uvicorn python app/main.py
