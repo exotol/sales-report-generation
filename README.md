@@ -6,6 +6,13 @@
 - OS: Ubuntu
 - version: 22.10
 
+prerequisite: json
+Если отсутствует на машине, то необходимо выполнить
+json необходим только для dev
+```bash 
+npm install -g json
+```
+
 
 1. Install pyenv
 ```bash
