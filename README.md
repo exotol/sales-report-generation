@@ -71,9 +71,10 @@ make gen-req
 10. Генерация .secrets.toml
 
 Перед созданием .secrets.toml необходимо установить переменные
-окружение, к примеру в .bashrc файл
-```commandline
-export 
+окружение, к примеру в .bashrc файл или еще где.
+```bash
+export UVICORN_SERVER_HOST="0.0.0.0"
+export UVICORN_SERVER_PORT=10000
 ```
 А затем уже выполнить создание .secrets.toml
 ```bash
