@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+
 from app.schemas.root import Root
 
 router = APIRouter()

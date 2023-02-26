@@ -1,9 +1,11 @@
-import uvicorn
 from typing import Any, Dict
-from fastapi import FastAPI, Depends
+
+import uvicorn
+from fastapi import Depends, FastAPI
+
 from app.api.v1.api import config_router_v1
-from app.sales_report_log.logger import get_log_config
 from app.config import settings
+from app.sales_report_log.logger import get_log_config
 
 
 def config_routers(app: FastAPI) -> None:

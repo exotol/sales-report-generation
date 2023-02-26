@@ -1,5 +1,7 @@
-from yaml import safe_load
 from typing import Any, Dict
+
+from yaml import safe_load
+
 from app.config import settings
 
 

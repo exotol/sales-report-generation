@@ -85,3 +85,14 @@ make create-secrets
 ```bash
 make server-run
 ```
+
+Сборка контейнера и последующий запуск
+```bash
+make build-container
+```
+
+TODO
+- best practice utils: mypy, pylint, flacke8
+- test
+- database
+- open api
