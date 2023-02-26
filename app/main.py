@@ -1,7 +1,7 @@
 from typing import Any, Dict
 
 import uvicorn
-from fastapi import Depends, FastAPI
+from fastapi import FastAPI
 
 from app.api.v1.api import config_router_v1
 from app.config import settings
