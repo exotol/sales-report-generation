@@ -98,5 +98,4 @@ poetry add --group dev bandit --extras "toml"
 
 TODO
 - test
-- database
 - open api
