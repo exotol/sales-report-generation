@@ -57,6 +57,10 @@ up:
 	@echo "Подъем докер контейнера"
 	docker-compose -f docker/docker-compose.local.yml up
 
+down:
+	@echo "Остановка докер контейнера"
+	docker-compose -f docker/docker-compose.local.yml down
+
 check-format:
 	@echo "Проверка форматирования файлов"
 	black --check ./app/

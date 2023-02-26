@@ -97,7 +97,6 @@ poetry add --group dev bandit --extras "toml"
 ```
 
 TODO
-- best practice utils: mypy, pylint, flacke8
 - test
 - database
 - open api
