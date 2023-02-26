@@ -91,6 +91,11 @@ make server-run
 make build-container
 ```
 
+Пример установки с помощью `poetry` с `extras` 
+```commandline
+poetry add --group dev bandit --extras "toml"
+```
+
 TODO
 - best practice utils: mypy, pylint, flacke8
 - test

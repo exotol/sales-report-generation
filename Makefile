@@ -47,9 +47,41 @@ server-run:
 	@echo "Запуск сервера"
 	uvicorn python app/main.py
 
-build-container:
+build:
 	@echo "Запущена сборка контейнера и последующий подъем"
 	make create-secrets; \
 	make gen-req; \
-	docker build -t sales-report-gen:0.1.0 docker/; \
+	docker build -t sales-report-gen:0.1.0 docker/
+
+up:
+	@echo "Подъем докер контейнера"
 	docker-compose -f docker/docker-compose.local.yml up
+
+check-format:
+	@echo "Проверка форматирования файлов"
+	black --check ./app/
+
+reformat:
+	@echo "Переформатирование файлов с кодов, если есть необходимость"
+	black .
+	isort .
+
+
+lint:
+	@echo "lint: запуск линтера"
+	mypy app || true
+	black app || true
+	pylint --rcfile=pyproject.toml app || true
+	bandit -c pyproject.toml -r app || true
+	isort app --check || true
+
+
+test:
+	@echo "Запуск юнит-тестов приложения"
+	pytest -vv .;
+
+coverage:
+	@echo "Создание отчета о покрытии тестами"
+	pytest -q --cov-reset --t cov-report= --cov=app app; \
+	pytest -vv app;
+	coverage report;
