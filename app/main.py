@@ -25,12 +25,9 @@ def run_server(log_config: Dict[str, Any]):
         log_level=settings.UVICORN_SERVER_LOG_LEVEL,
         reload=settings.UVICORN_SERVER_RELOAD,
         factory=settings.UVICORN_SERVER_FACTORY,
-        log_config=log_config
+        log_config=log_config,
     )
 
 
 if __name__ == "__main__":
-    run_server(
-        log_config=get_log_config()
-    )
-    
+    run_server(log_config=get_log_config())
